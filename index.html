@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-accent="yellow">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Better website concept</title>
+<link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/display.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/*@tokens start*/
+:root{
+  --n-0:#FFFFFF; --n-25:#FAFAFC; --n-50:#F2F4F8; --n-100:#E6E8F0; --n-200:#CCD1E2; --n-300:#B2BAD4;
+  --n-400:#99A3C5; --n-450:#808CB6; --n-500:#6575A6; --n-600:#4D5F9A; --n-700:#33488B; --n-750:#263C84;
+  --n-800:#19317C; --n-850:#132B79; --n-900:#051F71; --n-950:#001A6E; --n-990:#00124B;
+  --n-950-rgb:0 26 110;
+  --bad:#E5322D; --bad-bg:#FCEBEA; --bad-ink:#8E1E1A;
+  --acc:#FEC459; --acc-ink:#917033; --acc-ink3:#B78D40;
+  --radius:16px;
+  --display:'Brand Display', Arial, Helvetica, sans-serif;
+  --body:'Brand Body', Arial, Helvetica, sans-serif;
+  --icons:'Brand Icons';
+}
+@font-face{font-family:'Brand Display';font-style:normal;font-weight:200 800;font-display:swap;src:url(assets/fonts/display.woff2) format('woff2')}
+@font-face{font-family:'Brand Body';font-style:normal;font-weight:100 900;font-display:swap;src:url(assets/fonts/body.woff2) format('woff2')}
+@font-face{font-family:'Brand Icons';font-style:normal;font-weight:300;font-display:block;src:url(assets/fonts/icons.woff2) format('woff2')}
+/*@tokens end*/
+
+/* Accent options. --acc fills, --acc-ink is 4.5:1 on white, --acc-ink3 is 3:1 on white. Text on the accent is always --n-950. */
+/*@accents start*/
+:root[data-accent="yellow"]{--acc:#FEC459;--acc-ink:#917033;--acc-ink3:#B78D40}
+:root[data-accent="lime"]{--acc:#E2FFBA;--acc-ink:#6C7A59;--acc-ink3:#889970}
+/*@accents end*/
+:root{--gutter:max(16px, 3.5vw);--ease:cubic-bezier(.2,.7,.2,1);--nav-h:60px;--line:var(--n-200)}
+*{box-sizing:border-box}
+html,body{min-height:100%}
+body{margin:0;background:var(--n-950);color:var(--n-0);font-family:var(--body);font-weight:300;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:var(--gutter)}
+.band{display:block}
+.topnav{position:sticky;top:0;z-index:55;background:var(--n-950);color:var(--n-0);padding-top:env(safe-area-inset-top,0px);transition:transform .3s var(--ease)}
+.topnav .wrap{display:flex;align-items:stretch;height:var(--nav-h)}
+.topnav .tn-logo{display:flex;align-items:center;flex:none}
+.topnav .tn-logo img{display:block;width:80px;height:auto}
+.pnav{display:flex;margin-left:auto}
+.pnav a{display:flex;align-items:center;justify-content:center;padding:0 32px;border-left:1px solid var(--n-750);color:var(--n-0);text-decoration:none;font-family:var(--display);font-weight:600;font-size:17px;line-height:1;white-space:nowrap;transition:background-color .2s,color .2s}
+.pnav a:last-child{border-right:1px solid var(--n-750)}
+.pnav a:hover{background:var(--n-850)}
+.pnav a[aria-current="page"]{background:var(--n-0);color:var(--n-950);border-color:var(--n-0)}
+.pnav a:focus-visible,.tn-burger:focus-visible{outline:2px solid var(--n-0);outline-offset:-4px}
+.pnav a[aria-current="page"]:focus-visible{outline-color:var(--n-950)}
+.tn-burger{display:none}
+@media (max-width:900px){
+  :root{--nav-h:56px}
+  .topnav .tn-logo img{width:72px}
+  .tn-burger{display:flex;align-items:center;justify-content:center;width:56px;margin-left:auto;margin-right:calc(-1 * var(--gutter));padding:0;background:none;border:0;border-left:1px solid var(--n-750);color:var(--n-0);cursor:pointer}
+  .tn-burger i{position:relative;display:block;width:22px;height:2px;background:currentColor;transition:background-color .2s}
+  .tn-burger i::before,.tn-burger i::after{content:"";position:absolute;left:0;width:22px;height:2px;background:currentColor;transition:transform .25s var(--ease)}
+  .tn-burger i::before{transform:translateY(-7px)}.tn-burger i::after{transform:translateY(7px)}
+  .topnav.open .tn-burger i{background:transparent}
+  .topnav.open .tn-burger i::before{transform:rotate(45deg)}.topnav.open .tn-burger i::after{transform:rotate(-45deg)}
+  .pnav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;margin:0;background:var(--n-950);border-top:1px solid var(--n-750);box-shadow:0 16px 32px rgb(var(--n-950-rgb) / .25)}
+  .topnav.open .pnav{display:flex}
+  .pnav a{justify-content:flex-start;height:60px;padding:0 var(--gutter);border-left:0;border-right:0;border-bottom:1px solid var(--n-750);font-size:20px}
+  .pnav a:last-child{border-right:0}
+  .pnav a[aria-current="page"]{border-bottom-color:var(--n-0)}
+  .topnav.tn-hide{transform:translateY(-100%)}
+}
+@media (prefers-reduced-motion:reduce){.topnav,.tn-burger i::before,.tn-burger i::after{transition:none}}
+
+/* Home: the way into the concept review and the reference kit */
+.home{position:relative;min-height:calc(100vh - var(--nav-h));min-height:calc(100dvh - var(--nav-h));display:grid;place-items:center;overflow:hidden;isolation:isolate;padding:clamp(40px,8vh,96px) var(--gutter)}
+.home .grid{position:absolute;inset:0;z-index:-1;background:var(--n-0);opacity:.08;-webkit-mask:url(assets/website/shapes/b-pattern-tile.png) 0 0/260px auto repeat,linear-gradient(180deg,#000,transparent 85%);-webkit-mask-composite:source-in;mask:url(assets/website/shapes/b-pattern-tile.png) 0 0/260px auto repeat,linear-gradient(180deg,#000,transparent 85%);mask-composite:intersect}
+.home .col{width:min(640px,100%);display:grid;justify-items:center;text-align:center;gap:clamp(18px,3vw,26px)}
+.home .lg{width:clamp(150px,22vw,210px);height:auto}
+.home .tag{font:600 12px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--n-200)}
+.home h1{font:800 clamp(36px,6vw,64px)/1.02 var(--display);letter-spacing:-.035em;margin:0}
+.home h1 span{color:var(--acc)}
+.home p{margin:0;color:var(--n-200);max-width:46ch}
+.cover-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;width:100%;margin-top:clamp(8px,2vw,14px)}
+.cover-cards a{display:flex;align-items:center;justify-content:center;height:58px;border-radius:999px;font:700 17px/1 var(--display);text-decoration:none;color:var(--n-0);box-shadow:inset 0 0 0 1.5px rgb(255 255 255 / .45);transition:background-color .2s,transform .25s var(--ease)}
+.cover-cards a:hover{background:rgb(255 255 255 / .08);transform:translateY(-2px)}
+.cover-cards [data-concept-link]{order:-1;background:var(--acc);color:var(--n-950);box-shadow:none}
+.cover-cards [data-concept-link]:hover{background:var(--acc)}
+.cover-cards a:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.cover-cards [data-concept-link]:focus-visible{outline-color:var(--n-0)}
+.cover-dl{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;font-size:14px;color:var(--n-200)}
+.cover-help{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--n-0);border-radius:999px;padding:6px 14px 6px 6px;box-shadow:inset 0 0 0 1px rgb(255 255 255 / .25)}
+.cover-help i{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--acc)}
+.cover-help i svg{width:9px;height:10px;fill:var(--n-950);margin-left:2px}
+.cover-help span{color:var(--n-200)}
+.cover-help:hover b{text-decoration:underline}
+.cover-how{display:grid;gap:10px;margin:0;padding:0;list-style:none;text-align:left;font-size:15px;line-height:1.5;color:var(--n-200);max-width:52ch}
+.cover-how li{position:relative;padding-left:26px}
+.cover-how li::before{content:"";position:absolute;left:4px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--acc)}
+.cover-how b{color:var(--n-0);font-weight:600}
+.home .note{font-size:13px;color:var(--n-300)}
+@media (max-width:560px){.cover-cards{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.cover-cards a{transition:none}}
+</style>
+</head>
+<body>
+<header class="band topnav"><div class="wrap">
+  <a class="lg tn-logo" href="index.html" aria-label="Better home" aria-current="page"><img src="assets/logo/better-primary-white.svg" alt="Better" width="80" height="22"></a>
+  <button type="button" class="tn-burger" aria-expanded="false" aria-controls="pnav-home" aria-label="Open menu"><i aria-hidden="true"></i></button>
+  <nav class="pnav" id="pnav-home" aria-label="Guidelines"><a href="reference-kit.html">Reference kit</a><a href="concept-review.html" data-internal data-concept-link>Concept review</a></nav>
+</div></header>
+<main class="home">
+  <span class="grid" aria-hidden="true"></span>
+  <div class="col">
+    <img class="lg" src="assets/logo/better-primary-white.svg" alt="Better" width="210" height="58">
+    <span class="tag">Website concept</span>
+    <h1>Making business communication <span>Better.</span></h1>
+    <p>Your new homepage, built and clickable. It moves and responds just as the live site will, so scroll slowly and try things out.</p>
+    <ul class="cover-how">
+      <li><b>Look around.</b> Switch between desktop and mobile in the top bar, try both accent colours, or go full screen.</li>
+      <li><b>Leave comments.</b> Click Add a comment, then click anywhere on the design to pin a note to it.</li>
+      <li><b>See our thinking.</b> Show our thinking adds numbered notes that explain each part.</li>
+      <li><b>Approve as you go.</b> Tick each section in the Approval tab, then sign off when you're happy.</li>
+    </ul>
+    <nav class="cover-cards" aria-label="Start here"><a href="reference-kit.html">Reference kit</a>
+        <a href="concept-review.html" data-internal data-concept-link>Concept review</a></nav>
+    <div class="cover-dl"></div>
+    <p class="note">The concept review asks for a password, which we've sent separately.</p>
+  </div>
+</main>
+<script>
+(()=>{const navs=[...document.querySelectorAll('.topnav')];if(!navs.length)return;
+const root=document.documentElement,mq=matchMedia('(max-width:900px)');let y=scrollY,tick=false;
+const close=n=>{n.classList.remove('open');const b=n.querySelector('.tn-burger');if(b){b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Open menu')}};
+const show=v=>{navs.forEach(n=>n.classList.toggle('tn-hide',!v));root.classList.toggle('tn-shown',v)};
+const upd=()=>{tick=false;const ny=Math.max(0,scrollY);
+  if(!mq.matches){navs.forEach(n=>{n.classList.remove('tn-hide');close(n)});root.classList.remove('tn-shown');y=ny;return}
+  if(navs.some(n=>n.classList.contains('open'))){y=ny;return}
+  if(ny<=8)show(true);else if(ny>y+6)show(false);else if(ny<y-6)show(true);y=ny};
+addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});
+mq.addEventListener('change',upd);
+navs.forEach(n=>{const b=n.querySelector('.tn-burger');if(!b)return;
+  b.addEventListener('click',e=>{e.stopPropagation();const o=!n.classList.contains('open');if(!o){close(n);return}
+    n.classList.add('open');b.setAttribute('aria-expanded','true');b.setAttribute('aria-label','Close menu');show(true)});
+  n.querySelectorAll('.pnav a').forEach(a=>a.addEventListener('click',()=>close(n)))});
+document.addEventListener('click',e=>navs.forEach(n=>{if(n.classList.contains('open')&&!n.contains(e.target))close(n)}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')navs.forEach(n=>{if(n.classList.contains('open')){close(n);n.querySelector('.tn-burger').focus()}})});
+show(true);
+/* In-page links scroll directly, so they also work inside sandboxed previews */
+document.addEventListener('click',e=>{if(e.defaultPrevented||e.button||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+  const a=e.target.closest('a[href^="#"]');if(!a)return;const id=decodeURIComponent(a.getAttribute('href').slice(1));const el=id&&document.getElementById(id);if(!el)return;
+  e.preventDefault();try{history.pushState(null,'','#'+id)}catch(_){}el.scrollIntoView({block:'start'});
+  if(!el.matches('a,button,input,select,textarea,[tabindex]')){el.setAttribute('tabindex','-1');el.focus({preventScroll:true})}});
+})();
+</script>
+</body>
+</html>

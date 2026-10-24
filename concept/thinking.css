@@ -1,0 +1,21 @@
+/* Show our thinking: the design notes layer for the Concept review. Plain yellow cards, no animation. Never part of the website build */
+:root{--crt-note:#FFD43B;--crt-ink:#1A1600;--crt-line:#1A1600}
+.crt-dim,.crt-layer,.crt-all,.crt-panel{display:none}
+html.cr-thinking .crt-dim{display:block;position:fixed;inset:0;z-index:2147482000;background:rgb(10 10 20 / .22);pointer-events:none}
+html.cr-thinking .crt-layer{display:block;position:absolute;left:0;top:0;width:0;height:0;z-index:2147482500}
+.crt-dot{position:absolute;z-index:2;display:grid;place-items:center;width:28px;height:28px;padding:0;border:2px solid var(--crt-line);border-radius:50%;background:var(--crt-note);color:var(--crt-ink);font:700 13px/1 system-ui,-apple-system,Segoe UI,Arial,sans-serif;cursor:pointer;box-shadow:0 2px 8px rgb(0 0 0 / .25)}
+.crt-dot.open{outline:3px solid var(--crt-note);outline-offset:2px}
+.crt-dot:focus-visible{outline:3px solid var(--crt-ink);outline-offset:2px}
+.crt-card{position:absolute;z-index:1;display:grid;gap:6px;padding:14px 16px 16px;border-radius:10px;background:var(--crt-note);color:var(--crt-ink);font:400 14px/1.45 system-ui,-apple-system,Segoe UI,Arial,sans-serif;box-shadow:0 10px 30px rgb(0 0 0 / .28);text-align:left}
+.crt-card[hidden]{display:none}
+.crt-n{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--crt-ink);font-size:12px;font-weight:700}
+.crt-t{display:block;font-size:15.5px;font-weight:700;line-height:1.25}
+.crt-b{display:block;font-size:13px}
+.crt-b i{font-style:normal;font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.crt-w{display:block}
+html.cr-thinking .crt-all{display:block;position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:2147483000;height:44px;padding:0 20px;border:2px solid var(--crt-ink);border-radius:999px;background:var(--crt-note);color:var(--crt-ink);font:700 14px/1 system-ui,-apple-system,Segoe UI,Arial,sans-serif;cursor:pointer;box-shadow:0 6px 20px rgb(0 0 0 / .3)}
+html.cr-thinking .crt-all[hidden]{display:none}
+html.cr-thinking .crt-panel{display:grid;position:fixed;left:0;right:0;bottom:0;z-index:2147483000;gap:12px;padding:18px 18px calc(18px + env(safe-area-inset-bottom,0px));background:var(--crt-note);color:var(--crt-ink);font:400 15px/1.45 system-ui,-apple-system,Segoe UI,Arial,sans-serif;box-shadow:0 -10px 30px rgb(0 0 0 / .3);max-height:60vh;overflow:auto}
+html.cr-thinking .crt-panel[hidden]{display:none}
+.crt-pc{display:grid;gap:6px}
+.crt-x{justify-self:start;height:40px;padding:0 18px;border:2px solid var(--crt-ink);border-radius:999px;background:none;color:var(--crt-ink);font:700 14px/1 system-ui,-apple-system,Segoe UI,Arial,sans-serif;cursor:pointer}

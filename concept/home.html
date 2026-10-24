@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-accent="yellow">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Better homepage</title>
+<link rel="icon" href="../assets/favicon/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/display.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/body.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Better homepage concept, round 2, for the Concept review tab. 24 October 2026. Draft copy: claims and figures are Better's own and need
+     Better's confirmation; reviews are real Trustpilot reviews. Every section carries data-section and data-label; the header and footer are shared. -->
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/*@tokens start*/
+:root{
+  --n-0:#FFFFFF; --n-25:#FAFAFC; --n-50:#F2F4F8; --n-100:#E6E8F0; --n-200:#CCD1E2; --n-300:#B2BAD4;
+  --n-400:#99A3C5; --n-450:#808CB6; --n-500:#6575A6; --n-600:#4D5F9A; --n-700:#33488B; --n-750:#263C84;
+  --n-800:#19317C; --n-850:#132B79; --n-900:#051F71; --n-950:#001A6E; --n-990:#00124B;
+  --n-950-rgb:0 26 110;
+  --bad:#E5322D; --bad-bg:#FCEBEA; --bad-ink:#8E1E1A;
+  --acc:#FEC459; --acc-ink:#917033; --acc-ink3:#B78D40;
+  --radius:16px;
+  --display:'Brand Display', Arial, Helvetica, sans-serif;
+  --body:'Brand Body', Arial, Helvetica, sans-serif;
+  --icons:'Brand Icons';
+  --stone:#F5F6F4; --slate:#4B5852; --navy-deep:#001558;
+}
+@font-face{font-family:'Brand Display';font-style:normal;font-weight:200 800;font-display:swap;src:url(../assets/fonts/display.woff2) format('woff2')}
+@font-face{font-family:'Brand Body';font-style:normal;font-weight:100 900;font-display:swap;src:url(../assets/fonts/body.woff2) format('woff2')}
+@font-face{font-family:'Brand Icons';font-style:normal;font-weight:300;font-display:block;src:url(../assets/fonts/icons.woff2) format('woff2')}
+/*@tokens end*/
+/* Accent options. --acc fills, --acc-ink is 4.5:1 on white, --acc-ink3 is 3:1 on white. Text on the accent is always --n-950. */
+/*@accents start*/
+:root[data-accent="yellow"]{--acc:#FEC459;--acc-ink:#917033;--acc-ink3:#B78D40}
+:root[data-accent="lime"]{--acc:#E2FFBA;--acc-ink:#6C7A59;--acc-ink3:#889970}
+/*@accents end*/
+</style>
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="thinking.css">
+<script>
+/* Concept gate: opened on its own, this page sends people to the password screen first */
+(()=>{try{if(window.parent===window&&localStorage.getItem('better-cr')!=='1')location.replace('../concept-review.html')}catch(_){}})();
+</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="i-go" viewBox="0 0 24 24"><path d="M13.3 5.3a1 1 0 0 1 1.4 0l6 6a1 1 0 0 1 0 1.4l-6 6a1 1 0 1 1-1.4-1.4l4.3-4.3H4a1 1 0 1 1 0-2h13.6l-4.3-4.3a1 1 0 0 1 0-1.4Z" fill="currentColor"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.4l2.95 6.02 6.6.86-4.86 4.55 1.24 6.55L12 17.2l-5.93 3.18 1.24-6.55L2.45 9.28l6.6-.86z" fill="currentColor"/></symbol></defs></svg>
+<a class="c-skip" href="#main">Skip to content</a>
+<div class="bx-site c-head" data-bx-site data-c-head data-section="header" data-label="Header" data-cr-shared>
+  <header class="bx-hd">
+    <a class="lg" href="#top"><img src="../assets/logo/better-primary-white.svg" alt="Better home" width="120" height="32"></a>
+    <nav class="mn" aria-label="Main">
+      <ul>
+        <li class="has"><button type="button" class="dd" aria-expanded="false" aria-controls="c-mega">Features<span class="ms" aria-hidden="true">keyboard_arrow_down</span></button>
+          <div class="mega" id="c-mega" hidden>
+            <ul class="links">
+              <li><a href="#products"><span class="ic"><span class="ms" aria-hidden="true">call</span></span><span><b>Phone systems</b><small>Desk, mobile and desktop</small></span></a></li>
+              <li><a href="#products"><span class="ic"><span class="ms" aria-hidden="true">wifi</span></span><span><b>Business broadband</b><small>The line your calls run on</small></span></a></li>
+              <li><a href="#products"><span class="ic"><span class="ms" aria-hidden="true">smartphone</span></span><span><b>Mobiles</b><small>Bundles and bolt-ons</small></span></a></li>
+              <li><a href="#features"><span class="ic"><span class="ms" aria-hidden="true">mic</span></span><span><b>Call recording</b><small>Training and disputes</small></span></a></li>
+              <li><a href="#features"><span class="ic"><span class="ms" aria-hidden="true">hub</span></span><span><b>CRM integration</b><small>Notes open as they call</small></span></a></li>
+              <li><a href="#extras"><span class="ic"><span class="ms" aria-hidden="true">shield</span></span><span><b>Anti-fraud</b><small>Up to £10,000 a month of cover</small></span></a></li>
+            </ul>
+            <a class="feat" href="#features"><span class="bx-bgrid" aria-hidden="true"></span><span class="bx-ui"><span class="row"><span class="ic acc"><span class="ms" aria-hidden="true">call</span></span><span><b>Incoming call</b><small>Ringing on your mobile</small></span></span></span><b>Calls that follow you</b><span class="bx-link">See how it works<span class="ms" aria-hidden="true">arrow_forward</span></span></a>
+          </div></li>
+        <li><a href="#why">Why Better</a></li>
+        <li><a href="#team">About</a></li>
+        <li><a href="#life">Careers</a></li>
+      </ul>
+    </nav>
+    <div class="act"><a class="tel" href="tel:03301183069"><span class="ms" aria-hidden="true">call</span><span>0330 118 3069</span></a><a class="bx-btn accent" href="#cta">Let's chat<span class="dot"><svg aria-hidden="true" focusable="false"><use href="#i-go"/></svg></span></a></div>
+    <button type="button" class="burger" aria-expanded="false" aria-controls="c-mob" aria-label="Open menu"><i></i><i></i></button>
+  </header>
+  <div class="mob" id="c-mob" hidden>
+    <ul><li style="--i:0"><a href="#products">Features</a></li><li style="--i:1"><a href="#why">Why Better</a></li><li style="--i:2"><a href="#team">About</a></li><li style="--i:3"><a href="#life">Careers</a></li></ul>
+    <a class="bx-btn accent" href="#cta">Let's chat<span class="dot"><svg aria-hidden="true" focusable="false"><use href="#i-go"/></svg></span></a>
+    <a class="tel" href="tel:03301183069"><span class="ms" aria-hidden="true">call</span>0330 118 3069</a>
+  </div>
+</div>
+
+<main id="main">
+
+<section class="c-sec c-hero" id="top" data-section="hero" data-label="Hero">
+  <div class="bx-rhero c-rh" data-bx-in data-c-hero>
+    <div class="bx-room" aria-hidden="true"><div class="scene"><div class="wall"><span class="bx-bgrid"></span></div><div class="floor"><i class="g"></i></div></div></div>
+    <div class="txt" data-c-hp=".1">
+      <span class="bx-chip dk live"><i></i>Business telecoms · Bournemouth</span>
+      <h1 class="c-split" data-bx-split>Making business communication <span class="bx-word">Better.</span></h1>
+      <p>VoIP phone systems, business broadband and mobiles for UK businesses. Installed by our engineers and looked after by our own support team.</p>
+      <div class="btns"><a class="bx-btn accent" href="#cta">Let's chat<span class="dot"><svg aria-hidden="true" focusable="false"><use href="#i-go"/></svg></span></a><a class="bx-link" href="tel:03301183069">Or call 0330 118 3069<span class="ms" aria-hidden="true">arrow_forward</span></a></div>
+      <span class="bx-proof c-proof"><span class="c-stars" data-c-stars aria-hidden="true"><span class="bg"></span><span class="fg"></span></span><span><b data-c-count="49" data-div="10" data-delay="1100">4.9</b> on Trustpilot · 799 reviews</span></span>
+    </div>
+    <div class="vis" aria-hidden="true">
+      <div class="ly ly-yb" data-c-hp="-.05"><span class="yb"><span class="bx-bgrid"></span></span></div>
+      <div class="ly ly-fr" data-c-hp="-.12"><div class="fr"><div class="ph"><img class="phi" src="../assets/website/photos/photo-12-800.webp" srcset="../assets/website/photos/photo-12-480.webp 480w, ../assets/website/photos/photo-12-800.webp 800w, ../assets/website/photos/photo-12.webp 1042w" sizes="(max-width:760px) 92vw, (max-width:1100px) 75vw, 700px" alt="" width="1042" height="1056" fetchpriority="high" decoding="async"></div></div></div>
+      <div class="ly ly-1" data-c-hp="-.36"><div class="m m1 bx-ui" style="--i:0"><div class="row"><span class="ic acc"><span class="ms">call</span></span><div><b>Incoming call</b><small>New enquiry · answer on any device</small></div></div></div></div>
+      <div class="ly ly-2" data-c-hp="-.2"><div class="m m2 bx-ui" style="--i:1"><div class="row"><span class="ic"><span class="ms">smartphone</span></span><div><b>Ringing on your mobile</b><small>Softphone app</small></div></div></div></div>
+      <div class="ly ly-3" data-c-hp="-.44"><div class="m m3 bx-ui dk" style="--i:2"><div class="row"><span class="ic acc"><span class="ms">forum</span></span><div><b>WhatsApp</b><small>"Can you call me back after 3?"</small></div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="c-sec c-partners" data-section="partners" data-label="Trusted partners">
+  <div class="c-wrap c-partners-in">
+    <p class="c-eyebrow c-dr">Our trusted partners</p>
+    <div class="c-logos" data-c-logos>
+      <div class="row">
+        <img src="../assets/website/logos/trim/salesforce.webp" alt="Salesforce" width="240" height="168" loading="lazy" class="sf"><img src="../assets/website/logos/trim/yealink.webp" alt="Yealink" width="207" height="44" loading="lazy"><img src="../assets/website/logos/trim/yeastar.webp" alt="Yeastar" width="146" height="44" loading="lazy"><img src="../assets/website/logos/trim/gamma.webp" alt="Gamma" width="196" height="44" loading="lazy"><img src="../assets/website/logos/trim/callswitch.webp" alt="CallSwitch" width="174" height="44" loading="lazy"><img src="../assets/website/logos/trim/hubspot.webp" alt="HubSpot" width="153" height="44" loading="lazy">
+        <span class="dup" aria-hidden="true"><img src="../assets/website/logos/trim/salesforce.webp" alt="" width="240" height="168" loading="lazy" class="sf"><img src="../assets/website/logos/trim/yealink.webp" alt="" width="207" height="44" loading="lazy"><img src="../assets/website/logos/trim/yeastar.webp" alt="" width="146" height="44" loading="lazy"><img src="../assets/website/logos/trim/gamma.webp" alt="" width="196" height="44" loading="lazy"><img src="../assets/website/logos/trim/callswitch.webp" alt="" width="174" height="44" loading="lazy"><img src="../assets/website/logos/trim/hubspot.webp" alt="" width="153" height="44" loading="lazy"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="c-sec c-intro" id="why" data-section="intro" data-label="Why Better">
+  <div class="c-wrap">
+    <p class="c-eyebrow c-dr">Why Better</p>
+    <p class="c-lit" data-c-lit>Your phones, your broadband and your mobiles, from one provider who installs them, trains your team and picks up when you call. <span class="c-lit-acc">That's Better.</span></p>
+    <div class="c-cards3" data-c-icm>
+      <a class="c-pc c-hov" href="#switching" data-c-act style="--k:0">
+        <span class="pic"><span class="ph"><img class="phi" src="../assets/website/photos/photo-11-800.webp" srcset="../assets/website/photos/photo-11-480.webp 480w, ../assets/website/photos/photo-11-800.webp 800w, ../assets/website/photos/photo-11-1200.webp 1200w, ../assets/website/photos/photo-11-1600.webp 1600w, ../assets/website/photos/photo-11-2000.webp 2000w, ../assets/website/photos/photo-11.webp 2400w" sizes="(max-width:760px) 97vw, (max-width:1100px) 99vw, 456px" alt="" width="2400" height="1600" loading="lazy" decoding="async"></span></span>
+        <span class="body"><span class="c-ic" style="--am:bx-a-shake"><span class="ms" aria-hidden="true">build</span></span><b>Installed for you</b><span class="t">Our engineers install your phones, set up your numbers and show your team how it all works before they leave.</span><span class="bx-link">How switching works<span class="ms" aria-hidden="true">arrow_forward</span></span></span>
+      </a>
+      <a class="c-pc c-hov" href="#team" data-c-act style="--k:1">
+        <span class="pic"><span class="ph"><img class="phi" src="../assets/website/photos/photo-8-800.webp" srcset="../assets/website/photos/photo-8-480.webp 480w, ../assets/website/photos/photo-8-800.webp 800w, ../assets/website/photos/photo-8-1200.webp 1200w, ../assets/website/photos/photo-8-1600.webp 1600w, ../assets/website/photos/photo-8-2000.webp 2000w, ../assets/website/photos/photo-8.webp 2400w" sizes="(max-width:760px) 97vw, (max-width:1100px) 99vw, 456px" alt="" width="2400" height="1600" loading="lazy" decoding="async"></span></span>
+        <span class="body"><span class="c-ic" style="--am:bx-a-bob"><span class="ms" aria-hidden="true">support_agent</span></span><b>Support you can talk to</b><span class="t">Our UK-based team trains your people, on site or remotely, and picks up when you need a hand.</span><span class="bx-link">Meet the support team<span class="ms" aria-hidden="true">arrow_forward</span></span></span>
+      </a>
+      <a class="c-pc c-hov cut" href="#features" data-c-act style="--k:2">
+        <span class="pic"><span class="bx-bgrid" aria-hidden="true"></span><img src="../assets/website/ui/ui-phone-man-m.webp" srcset="../assets/website/ui/ui-phone-man-480.webp 480w, ../assets/website/ui/ui-phone-man-m.webp 800w, ../assets/website/ui/ui-phone-man.webp 1480w" sizes="(max-width:900px) 85vw, 360px" alt="" width="800" height="587" loading="lazy" decoding="async"></span>
+        <span class="body"><span class="c-ic" style="--am:bx-a-slide"><span class="ms" aria-hidden="true">devices</span></span><b>Work from anywhere</b><span class="t">Your business number on desk phones, mobiles and laptops, so calls find you in the office, at home or on the road.</span><span class="bx-link">See the app<span class="ms" aria-hidden="true">arrow_forward</span></span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="c-sec c-switchsec" id="switch" data-section="switch" data-label="Today and with Better">
+  <div class="c-swpin" data-c-swauto>
+    <div class="c-swin c-wrap">
+      <div class="c-sw" data-bx-sw3 style="--ox:12%;--oy:14%">
+        <div class="l">
+          <div class="tg"><span class="t0">Today</span><button type="button" class="bx-switch" role="switch" aria-checked="false" aria-label="Switch to Better" data-sw></button><span class="t1">With Better</span></div>
+          <div class="st hd"><h2 class="a">Your phones, as they are today.</h2><h2 class="b">Your phones, made <span class="bx-word">Better.</span></h2></div>
+          <div class="st"><ul class="a"><li><span class="ms" aria-hidden="true">remove</span>One desk phone per person</li><li><span class="ms" aria-hidden="true">remove</span>Calls ring out when you're away from your desk</li><li><span class="ms" aria-hidden="true">remove</span>Customer notes in another window</li><li><span class="ms" aria-hidden="true">remove</span>Hold time that's wasted time</li></ul>
+            <ul class="b"><li style="--i:0"><span class="ms" aria-hidden="true">check_circle</span>Calls on desk, mobile and laptop</li><li style="--i:1"><span class="ms" aria-hidden="true">check_circle</span>Calls follow you through the app</li><li style="--i:2"><span class="ms" aria-hidden="true">check_circle</span>Customer notes open as they call</li><li style="--i:3"><span class="ms" aria-hidden="true">check_circle</span>Hold time that informs and sells</li></ul></div>
+          <a class="bx-btn" href="#setup">Build your setup<span class="dot"><svg aria-hidden="true" focusable="false"><use href="#i-go"/></svg></span></a>
+        </div>
+        <div class="r">
+          <div class="pic"><div class="ph"><img class="phi" src="../assets/website/photos/photo-9-800.webp" srcset="../assets/website/photos/photo-9-480.webp 480w, ../assets/website/photos/photo-9-800.webp 800w, ../assets/website/photos/photo-9-1200.webp 1200w, ../assets/website/photos/photo-9-1600.webp 1600w, ../assets/website/photos/photo-9-2000.webp 2000w, ../assets/website/photos/photo-9.webp 2400w" sizes="(max-width:760px) 84vw, (max-width:1100px) 91vw, 972px" alt="" width="2400" height="1600" loading="lazy" decoding="async"></div></div>
+          <div class="st ui"><div class="a bx-ui"><div class="row"><span class="ic"><span class="ms" aria-hidden="true">call_end</span></span><div><b>Missed call</b><small>New enquiry · while you were out</small></div></div></div><div class="b bx-ui"><div class="row"><span class="ic acc"><span class="ms" aria-hidden="true">phone_in_talk</span></span><div><b>Answered on your mobile</b><small>Customer notes opened</small></div></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="c-sec c-feat" id="features" data-section="features" data-label="Better everything">
+  <div class="c-wrap">
+    <div class="c-headrow"><h2 class="c-h2 c-split" data-bx-split>Say hello to Better <span class="bx-uline">everything.</span></h2><p class="c-dr">Four tools that come with your phone system, and what each one does for your team.</p></div>
+    <div class="c-stack" data-c-stack>
+      <article class="fc fc-navy" style="--k:0">
+        <div class="tx c-drop"><span class="no">01 <i>/ 04</i></span><span class="bx-chip dk"><i></i>Softphone app</span><h3>Your business line, <span class="bx-uline">on any device.</span></h3><p>Turn a laptop or mobile into a working phone line in a few clicks, with group calls, messaging and file sharing built in.</p><ul class="ticks"><li>See who's free before you transfer</li><li>Group calls and team chat</li><li>Mac, Windows, iPhone and Android</li></ul><a class="bx-link" href="#cta">Get the app with your system<span class="ms" aria-hidden="true">arrow_forward</span></a></div>
+        <div class="vi"><div class="fr"><img src="../assets/website/ui/ui-app.webp" srcset="../assets/website/ui/ui-app-m.webp 800w, ../assets/website/ui/ui-app.webp 1200w" sizes="(max-width:760px) 90vw, 46vw" alt="The Better softphone app showing the team directory on a mobile" width="1200" height="1080" loading="lazy"></div><div class="fl bx-ui"><div class="row"><span class="ic acc"><span class="ms" aria-hidden="true">group</span></span><div><b>3 people free</b><small>Sales team</small></div></div></div></div>
+      </article>
+      <article class="fc fc-acc" style="--k:1">
+        <div class="tx c-drop"><span class="no">02 <i>/ 04</i></span><span class="bx-chip"><i></i>CRM integration</span><h3>Know who's calling before you answer.</h3><p>Your customer's file and notes open as the call comes in, so whoever picks up starts where the last conversation left off.</p><ul class="ticks"><li>Works with HubSpot, Salesforce and Zoho</li><li>Click to call from the customer record</li><li>Every call logged against the contact</li></ul><a class="bx-link" href="#cta">Connect your CRM<span class="ms" aria-hidden="true">arrow_forward</span></a></div>
+        <div class="vi"><div class="fr"><img src="../assets/website/ui/ui-crm.webp" srcset="../assets/website/ui/ui-crm-m.webp 800w, ../assets/website/ui/ui-crm.webp 1200w" sizes="(max-width:760px) 90vw, 46vw" alt="A customer record opening in the CRM as their call comes in" width="1200" height="1080" loading="lazy"></div><div class="fl bx-ui dk"><div class="row"><span class="ic acc"><span class="ms" aria-hidden="true">person</span></span><div><b>Notes opened</b><small>Last call: Tuesday, 2:40pm</small></div></div></div></div>
+      </article>
+      <article class="fc fc-stone" style="--k:2">
+        <div class="tx c-drop"><span class="no">03 <i>/ 04</i></span><span class="bx-chip"><i></i>Call recording and reporting</span><h3>Turn every call into <span class="bx-blk">something useful.</span></h3><p>Train with real calls, settle disputes with a clear record and see when calls come in, who answers and which ones were missed.</p><ul class="ticks"><li>Recordings stored securely in the cloud</li><li>Supports PCI compliance for card payments</li><li>Missed-call and campaign reports</li></ul><a class="bx-link" href="#cta">See the reports<span class="ms" aria-hidden="true">arrow_forward</span></a></div>
+        <div class="vi"><div class="fr"><img src="../assets/website/ui/ui-desktop.webp" srcset="../assets/website/ui/ui-desktop-m.webp 800w, ../assets/website/ui/ui-desktop.webp 1200w" sizes="(max-width:760px) 90vw, 46vw" alt="The desktop call dashboard with live calls and recording controls" width="1200" height="1080" loading="lazy"></div><div class="fl bx-ui"><div class="row"><span class="ic"><span class="ms" aria-hidden="true">mic</span></span><div><b>Recording saved</b><small>4 min 12 sec · in the cloud</small></div></div></div></div>
+      </article>
+      <article class="fc fc-navy" style="--k:3">
+        <div class="tx c-drop"><span class="no">04 <i>/ 04</i></span><span class="bx-chip dk"><i></i>On-hold marketing</span><h3>Make hold time <span class="bx-uline">count.</span></h3><p>Custom messages and music while callers wait, seasonal offers that change on schedule and an auto-attendant that sends every caller to the right person.</p><ul class="ticks"><li>Your own messages and music</li><li>Press 1 for sales, 2 for support</li><li>Change it for Christmas or a promotion</li></ul><a class="bx-link" href="#cta">Hear what's possible<span class="ms" aria-hidden="true">arrow_forward</span></a></div>
+        <div class="vi"><div class="fr"><img src="../assets/website/ui/ui-onhold.webp" srcset="../assets/website/ui/ui-onhold-m.webp 800w, ../assets/website/ui/ui-onhold.webp 1200w" sizes="(max-width:760px) 90vw, 46vw" alt="An auto-attendant routing an incoming call to sales, operations or billing" width="1200" height="1080" loading="lazy"></div><div class="fl bx-ui"><div class="row"><span class="ic acc"><span class="ms" aria-hidden="true">music_note</span></span><div><b>Now playing</b><small>Your spring offer message</small></div></div></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="c-sec c-products" id="products" data-section="products" data-label="Products">
+  <div class="c-wrap">
+    <div class="c-headrow"><h2 class="c-h2 c-split" data-bx-split>Everything your calls <span class="bx-blk">run on.</span></h2><a class="bx-btn ghost c-dr" href="#setup">Build your setup<span class="dot"><svg aria-hidden="true" focusable="false"><use href="#i-go"/></svg></span></a></div>
+    <div class="bx-c78 c-prod" data-bx-c78 data-c-icm>
+      <a href="#setup" class="c-hov" data-c-act><span class="c-ic" style="--am:bx-a-shake"><span class="ms" aria-hidden="true">call</span></span><b>Phone systems</b><small>VoIP desk phones, mobile and desktop apps, all on one business number.</small><span class="pic cut"><span class="bx-bgrid" aria-hidden="true"></span><img src="../assets/website/ui/ui-handset-m.webp" alt="" width="800" height="517" loading="lazy"></span><span class="go"><span class="ms" aria-hidden="true">arrow_forward</span></span></a>
+      <a href="#setup" class="c-hov" data-c-act><span class="c-ic" style="--am:bx-a-blink"><span class="ms" aria-hidden="true">wifi</span></span><b>Business broadband</b><small>The connection your calls and your office run on, set up alongside your phones.</small><span class="pic"><span class="ph"><img class="phi" src="../assets/website/photos/photo-10-800.webp" srcset="../assets/website/photos/photo-10-480.webp 480w, ../assets/website/photos/photo-10-800.webp 800w, ../assets/website/photos/photo-10.webp 922w" sizes="(max-width:760px) 97vw, (max-width:1100px) 32vw, 409px" alt="" width="922" height="924" loading="lazy" decoding="async"></span></span><span class="go"><span class="ms" aria-hidden="true">arrow_forward</span></span></a>
+      <a href="#setup" class="c-hov" data-c-act><span class="c-ic" style="--am:bx-a-bob"><span class="ms" aria-hidden="true">smartphone</span></span><b>Mobiles</b><small>Business mobiles for the whole team, with bundles and bolt-ons that fit how you work.</small><span class="pic cut"><span class="bx-bgrid" aria-hidden="true"></span><img src="../assets/website/ui/ui-phone-man-m.webp" srcset="../assets/website/ui/ui-phone-man-480.webp 480w, ../assets/website/ui/ui-phone-man-m.webp 800w, ../assets/website/ui/ui-phone-man.webp 1480w" sizes="(max-width:760px) 80vw, 340px" alt="" width="800" height="587" loading="lazy" decoding="async"></span><span class="go"><span class="ms" aria-hidden="true">arrow_forward</span></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="c-sec c-extras" id="extras" data-section="extras" data-label="More features" data-c-spot>
+  <span class="bx-bgrid base" aria-hidden="true"></span><span class="bx-bgrid lit" aria-hidden="true"></span>
+  <div class="c-wrap">
+    <div class="c-exhead">
+      <div class="c-drop"><h2 class="c-h2 c-split" data-bx-split>And the tools <span class="bx-word">around them.</span></h2><p>Every Better system can come with these. Pick the ones that fit, and add more as you grow.</p><a class="bx-btn accent" href="#setup">Pick what you need<span class="dot"><svg aria-hidden="true" focusable="false"><use href="#i-go"/></svg></span></a></div>
+      <div class="bx-orbit c-orbit" data-c-orbit aria-hidden="true"><span class="ring"></span><span class="ring r2"></span><div class="hub"><img src="../assets/logo/better-favicon-white.svg" alt="" width="88" height="74"></div>
+        <div class="rot"><span class="it" style="--a:0deg"><span><span class="ms">call</span></span></span><span class="it" style="--a:60deg"><span><span class="ms">mic</span></span></span><span class="it" style="--a:120deg"><span><span class="ms">bar_chart</span></span></span><span class="it" style="--a:180deg"><span><span class="ms">hub</span></span></span><span class="it" style="--a:240deg"><span><span class="ms">devices</span></span></span><span class="it" style="--a:300deg"><span><span class="ms">wifi</span></span></span></div></div>
+    </div>
+    <div class="bx-glows c-glows" data-bx-glows data-c-icm>
+      <a class="bx-glow c-hov" href="#cta" data-c-act><span class="in2"><span class="c-ic" style="--am:bx-a-grow"><span class="ms" aria-hidden="true">bar_chart</span></span><h3>Call reporting</h3><p>Real-time stats on every call, including missed and unreturned calls, sent to you automatically.</p></span></a>
+      <a class="bx-glow c-hov" href="#cta" data-c-act><span class="in2"><span class="c-ic" style="--am:bx-a-bob"><span class="ms" aria-hidden="true">forum</span></span><h3>WhatsApp integration</h3><p>Reply to customers on WhatsApp from the same place you take their calls.</p></span></a>
+      <a class="bx-glow c-hov" href="#cta" data-c-act><span class="in2"><span class="c-ic" style="--am:bx-a-pop"><span class="ms" aria-hidden="true">shield</span></span><h3>Anti-fraud protection</h3><p>Cover against fraudulent calls on your system, up to £10,000 a month.</p></span></a>
+      <a class="bx-glow c-hov" href="#cta" data-c-act><span class="in2"><span class="c-ic" style="--am:bx-a-slide"><span class="ms" aria-hidden="true">public</span></span><h3>International calls</h3><p>Call customers and suppliers abroad over VoIP, on the same system.</p></span></a>
+      <a class="bx-glow c-hov" href="#cta" data-c-act><span class="in2"><span class="c-ic" style="--am:bx-a-pulse"><span class="ms" aria-hidden="true">call_received</span></span><h3>Inbound numbers</h3><p>Numbers your customers call, routed to whoever needs to answer them.</p></span></a>
+      <a class="bx-glow c-hov" href="#cta" data-c-act><span class="in2"><span class="c-ic" style="--am:bx-a-tilt"><span class="ms" aria-hidden="true">flight_takeoff</span></span><h3>Business traveller</h3><p>Stay reachable on your business number when you're working abroad.</p></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="c-sec c-board" data-section="statement" data-label="Statement">
+  <div class="c-wrap c-brd" data-c-board>
+    <p class="c-eyebrow"><span class="dot" aria-hidden="true"></span>Now connecting</p>
+    <p class="l1"><span class="cw" style="--k:0">Calls.</span> <span class="cw" style="--k:1">Broadband.</span> <span class="cw" style="--k:2">Mobiles.</span> <span class="cw" style="--k:3">Support.</span></p>
+    <p class="l2"><span class="w2">All made</span> <span class="mk">Better.</span></p>
+  </div>
+</section>
+
+<section class="c-sec c-reviews" id="reviews" data-section="reviews" data-label="Reviews">
+  <div class="c-wrap c-revhead">
+    <div class="c-score" data-c-score>
+      <span class="bx-bgrid" aria-hidden="true"></span>
+      <span class="num"><span data-c-count="49" data-div="10">4.9</span></span>
+      <span class="c-stars big" data-c-stars aria-hidden="true"><span class="bg"></span><span class="fg"></span></span>
+      <small><b>Excellent</b> on Trustpilot · 799 reviews · 24 October 2026</small>
+    </div>
+    <div class="c-drop"><h2 class="c-h2 c-split" data-bx-split>Rated by the businesses <span class="bx-uline">we look after.</span></h2><p>Most of our reviews name the engineer who installed the system. Here's what people said this month.</p><a class="bx-btn" href="#reviews">Read all 799 reviews<span class="dot"><svg aria-hidden="true" focusable="false"><use href="#i-go"/></svg></span></a></div>
+  </div>
+  <div class="c-revrows" data-c-revrows>
+    <div class="row">
+      <figure class="rc"><span class="c-st5" aria-hidden="true"></span><span class="sr">5 stars</span><blockquote>"Quick and easy, well explained great service from Richard!"</blockquote><figcaption><b>Emma Laughton</b>19 October 2026</figcaption></figure>
+      <figure class="rc acc"><span class="c-st5" aria-hidden="true"></span><span class="sr">5 stars</span><blockquote>"Allan was extremely helpful today and explained how to use the new system clearly and simply, making it easy to understand."</blockquote><figcaption><b>Coral</b>15 October 2026</figcaption></figure>
+      <figure class="rc"><span class="c-st5" aria-hidden="true"></span><span class="sr">5 stars</span><blockquote>"We received a smooth and professional installation of our new phone system by Tom, without causing any disruption to our business."</blockquote><figcaption><b>Matt Tickle</b>15 October 2026</figcaption></figure>
+      <figure class="rc dk"><span class="c-st5" aria-hidden="true"></span><span class="sr">5 stars</span><blockquote>"Lee was great took time to answer questions and explained the system really well."</blockquote><figcaption><b>Kelly</b>15 October 2026</figcaption></figure>
+      <figure class="rc"><span class="c-st5" aria-hidden="true"></span><span class="sr">5 stars</span><blockquote>"Tom was amazing during today's install. Everything was done with ease and everything was explained along the way! Thank you"</blockquote><figcaption><b>Dale Wild</b>21 July 2026</figcaption></figure>
+      <figure class="rc acc"><span class="c-st5" aria-hidden="true"></span><span class="sr">5 stars</span><blockquote>"Excellent service From Richard. Explained everything well"</blockquote><figcaption><b>Richard Wood</b>20 October 2026</figcaption></figure>
+    </div>
+    <div class="row r2">
+      <figure class="rc dk"><span class="c-st5" aria-hidden="true"></span><span class="sr">5 stars</span><blockquote>"Allan was fantastic today setting up our phones, explaining everything clearly, such a helpful and pleasant chap"</blockquote><figcaption><b>Suffolk Rider Training</b>21 October 2026</figcaption></figure>
+      <figure class="rc"><span class="c-st5" aria-hidden="true"></span><span class="sr">5 stars</span><blockquote>"Tom was brilliant installing our new telephones."</blockquote><figcaption><b>Graham Tottle</b>14 October 2026</figcaption></figure>
+      <figure class="rc acc"><span class="c-st5" aria-hidden="true"></span><span class="sr">5 stars</span><blockquote>"Tom was great setting up our phones and going through everything, he was really helpful explaining to my non tech savvy self"</blockquote><figcaption><b>Laura-Ann Paul</b>15 October 2026</figcaption></figure>
+      <figure class="rc"><span class="c-st5" aria-hidden="true"></span><span class="sr">5 stars</span><blockquote>"Lee was great from start to finish."</blockquote><figcaption><b>DS</b>15 October 2026</figcaption></figure>
+      <figure class="rc dk"><span class="c-st5" aria-hidden="true"></span><span class="sr">5 stars</span><blockquote>"Tom made the installation process very simple and quick without causing any business disruptions…"</blockquote><figcaption><b>Toyah Wood</b>16 October 2026</figcaption></figure>
+      <figure class="rc"><span class="c-st5" aria-hidden="true"></span><span class="sr">5 stars</span><blockquote>"Tom was amazing, really helpful and thorough."</blockquote><figcaption><b>Becky</b>15 October 2026</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="c-sec c-figures" data-section="figures" data-label="Figures">
+  <div class="c-wrap">
+    <div class="bx-figs c-figs" data-c-icm>
+      <span class="bx-bgrid ambient" aria-hidden="true" style="color:var(--n-0)"></span>
+      <div class="bx-fig"><span class="c-ic" style="--am:bx-a-blink"><span class="ms" aria-hidden="true">wifi</span></span><span class="num"><span data-c-count="9998" data-div="100">99.98</span>%</span><p>Connection uptime</p></div>
+      <div class="bx-fig"><span class="c-ic" style="--am:bx-a-pop"><span class="ms" aria-hidden="true">timer</span></span><span class="num"><span data-c-count="14">14</span> min</span><p>Average time to resolve a support ticket</p></div>
+      <div class="bx-fig"><span class="c-ic" style="--am:bx-a-shake"><span class="ms" aria-hidden="true">call</span></span><span class="num"><span data-c-count="500000" data-fmt="comma">500,000</span>+</span><p>Minutes of calls carried every month</p></div>
+      <div class="bx-fig"><span class="c-ic" style="--am:bx-a-bob"><span class="ms" aria-hidden="true">storefront</span></span><span class="num"><span data-c-count="750">750</span>+</span><p>UK businesses that trust Better</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="c-sec c-team" id="team" data-section="team" data-label="Our team">
+  <div class="c-wrap">
+    <div class="bx-tis" data-bx-split2>
+      <div class="vis"><div class="ph-w wipe" data-sp="-.06"><div class="ph"><img class="phi" src="../assets/website/photos/photo-7-800.webp" srcset="../assets/website/photos/photo-7-480.webp 480w, ../assets/website/photos/photo-7-800.webp 800w, ../assets/website/photos/photo-7.webp 1200w" sizes="(max-width:760px) 85vw, (max-width:1100px) 41vw, 512px" alt="" width="1200" height="1600" loading="lazy" decoding="async"></div></div><div class="pm" data-sp=".1"><div class="bx-ui"><div class="row"><span class="ic acc"><span class="ms" aria-hidden="true">task_alt</span></span><div><b>Ticket resolved</b><small>New handset set up · 11:42am</small></div></div></div></div><div class="pm pm2" data-sp=".18"><div class="bx-ui dk"><div class="row"><span class="ic acc"><span class="ms" aria-hidden="true">support_agent</span></span><div><b>Support picked up</b><small>Bournemouth office</small></div></div></div></div><span class="blk" aria-hidden="true" data-sp=".03"></span></div>
+      <div class="txt"><span class="bx-chip"><i></i>About Better</span><h2>Support that knows <span class="bx-blk">your setup.</span></h2><p>When something's not right, you talk to our own team in Bournemouth. They can see how your system is set up, so you never have to explain it twice.</p><a class="bx-link" href="#team">About us<span class="ms" aria-hidden="true">arrow_forward</span></a></div>
+    </div>
+  </div>
+  <div class="c-wrap c-life flip" id="life">
+    <div class="bx-fan c-fan" data-bx-fan data-c-act><button type="button" aria-label="The Better team: shuffle the photos"><span class="card" style="--k:0"><span class="ph"><img class="phi" src="../assets/website/photos/photo-5-800.webp" srcset="../assets/website/photos/photo-5-480.webp 480w, ../assets/website/photos/photo-5-800.webp 800w, ../assets/website/photos/photo-5-1200.webp 1200w, ../assets/website/photos/photo-5-1600.webp 1600w, ../assets/website/photos/photo-5.webp 1716w" sizes="(max-width:760px) 68vw, (max-width:1100px) 47vw, 364px" alt="" width="1716" height="1908" loading="lazy" decoding="async"></span></span><span class="card" style="--k:1"><span class="ph"><img class="phi" src="../assets/website/photos/photo-4-800.webp" srcset="../assets/website/photos/photo-4-480.webp 480w, ../assets/website/photos/photo-4-800.webp 800w, ../assets/website/photos/photo-4-1200.webp 1200w, ../assets/website/photos/photo-4-1600.webp 1600w, ../assets/website/photos/photo-4.webp 1664w" sizes="(max-width:760px) 100vw, (max-width:1100px) 70vw, 540px" alt="" width="1664" height="1248" loading="lazy" decoding="async"></span></span><span class="card" style="--k:2"><span class="ph"><img class="phi" src="../assets/website/photos/photo-6-800.webp" srcset="../assets/website/photos/photo-6-480.webp 480w, ../assets/website/photos/photo-6-800.webp 800w, ../assets/website/photos/photo-6-1200.webp 1200w, ../assets/website/photos/photo-6.webp 1600w" sizes="(max-width:760px) 100vw, (max-width:1100px) 70vw, 540px" alt="" width="1600" height="1200" loading="lazy" decoding="async"></span></span><span class="card" style="--k:3"><span class="ph"><img class="phi" src="../assets/website/photos/photo-3-800.webp" srcset="../assets/website/photos/photo-3-480.webp 480w, ../assets/website/photos/photo-3-800.webp 800w, ../assets/website/photos/photo-3-1200.webp 1200w, ../assets/website/photos/photo-3.webp 1600w" sizes="(max-width:760px) 100vw, (max-width:1100px) 70vw, 540px" alt="" width="1600" height="1200" loading="lazy" decoding="async"></span><span class="tag bx-chip"><i></i>The Better team</span></span></button></div>
+    <div class="c-drop"><p class="c-eyebrow">Life at Better</p><h2 class="c-h2">The team <span class="bx-uline">behind it.</span></h2><p>Sales, engineers and support under one roof in Bournemouth, a few minutes from the beach. Early finish on Fridays and your birthday off.</p><a class="bx-btn accent" href="#life">See our open roles<span class="dot"><svg aria-hidden="true" focusable="false"><use href="#i-go"/></svg></span></a></div>
+  </div>
+  <div class="bx-strip2" data-bx-strip2><div class="row" aria-hidden="true"><div class="ph"><img class="phi" src="../assets/website/photos/photo-1-800.webp" srcset="../assets/website/photos/photo-1-480.webp 480w, ../assets/website/photos/photo-1-800.webp 800w, ../assets/website/photos/photo-1-1200.webp 1200w, ../assets/website/photos/photo-1-1600.webp 1600w, ../assets/website/photos/photo-1-2000.webp 2000w, ../assets/website/photos/photo-1.webp 2400w" sizes="(max-width:760px) 113vw, (max-width:1100px) 57vw, 643px" alt="" width="2400" height="1533" loading="lazy" decoding="async"></div><div class="ph"><img class="phi" src="../assets/website/photos/photo-3-800.webp" srcset="../assets/website/photos/photo-3-480.webp 480w, ../assets/website/photos/photo-3-800.webp 800w, ../assets/website/photos/photo-3-1200.webp 1200w, ../assets/website/photos/photo-3.webp 1600w" sizes="(max-width:760px) 69vw, (max-width:1100px) 35vw, 394px" alt="" width="1600" height="1200" loading="lazy" decoding="async"></div><div class="ph"><img class="phi" src="../assets/website/photos/photo-10-800.webp" srcset="../assets/website/photos/photo-10-480.webp 480w, ../assets/website/photos/photo-10-800.webp 800w, ../assets/website/photos/photo-10.webp 922w" sizes="(max-width:760px) 72vw, (max-width:1100px) 36vw, 409px" alt="" width="922" height="924" loading="lazy" decoding="async"></div><div class="ph"><img class="phi" src="../assets/website/photos/photo-4-800.webp" srcset="../assets/website/photos/photo-4-480.webp 480w, ../assets/website/photos/photo-4-800.webp 800w, ../assets/website/photos/photo-4-1200.webp 1200w, ../assets/website/photos/photo-4-1600.webp 1600w, ../assets/website/photos/photo-4.webp 1664w" sizes="(max-width:760px) 69vw, (max-width:1100px) 35vw, 394px" alt="" width="1664" height="1248" loading="lazy" decoding="async"></div><div class="ph"><img class="phi" src="../assets/website/photos/photo-8-800.webp" srcset="../assets/website/photos/photo-8-480.webp 480w, ../assets/website/photos/photo-8-800.webp 800w, ../assets/website/photos/photo-8-1200.webp 1200w, ../assets/website/photos/photo-8-1600.webp 1600w, ../assets/website/photos/photo-8-2000.webp 2000w, ../assets/website/photos/photo-8.webp 2400w" sizes="(max-width:760px) 108vw, (max-width:1100px) 55vw, 616px" alt="" width="2400" height="1600" loading="lazy" decoding="async"></div><div class="ph"><img class="phi" src="../assets/website/photos/photo-2-800.webp" srcset="../assets/website/photos/photo-2-480.webp 480w, ../assets/website/photos/photo-2-800.webp 800w, ../assets/website/photos/photo-2-1200.webp 1200w, ../assets/website/photos/photo-2-1600.webp 1600w, ../assets/website/photos/photo-2.webp 1920w" sizes="(max-width:760px) 78vw, (max-width:1100px) 40vw, 444px" alt="" width="1920" height="1280" loading="lazy" decoding="async"></div><div class="ph"><img class="phi" src="../assets/website/photos/photo-6-800.webp" srcset="../assets/website/photos/photo-6-480.webp 480w, ../assets/website/photos/photo-6-800.webp 800w, ../assets/website/photos/photo-6-1200.webp 1200w, ../assets/website/photos/photo-6.webp 1600w" sizes="(max-width:760px) 96vw, (max-width:1100px) 49vw, 548px" alt="" width="1600" height="1200" loading="lazy" decoding="async"></div></div></div>
+</section>
+
+<section class="c-sec c-switching" id="switching" data-section="switching" data-label="How switching works" data-c-expand>
+  <span class="navy" aria-hidden="true"><span class="bx-bgrid"></span></span><span class="fl" aria-hidden="true"><span class="bx-bgrid"></span></span>
+  <div class="bx-hsteps" data-bx-hsteps><div class="pin">
+    <span class="pfl" aria-hidden="true"><span class="bx-bgrid"></span></span>
+    <div class="hd c-swihead c-drop"><p class="c-eyebrow">How switching works</p><h2 class="c-h2 c-split" data-bx-split>Switching to Better, <span class="bx-blk">step by step.</span></h2><p>Four steps from the first chat to your team taking calls on Better.</p></div>
+    <div class="trk"><span class="line" aria-hidden="true"><i></i></span>
+      <div class="st" style="--i:0"><span class="n">1</span><span class="c-ic" style="--am:bx-a-bob"><span class="ms" aria-hidden="true">forum</span></span><b>Let's chat</b><p>Tell us how your business takes calls today and what isn't working.</p></div>
+      <div class="st" style="--i:1"><span class="n">2</span><span class="c-ic" style="--am:bx-a-slide"><span class="ms" aria-hidden="true">devices</span></span><b>Demo and quote</b><p>A specialist shows you the system and quotes for your business, with everything in writing.</p></div>
+      <div class="st" style="--i:2"><span class="n">3</span><span class="c-ic" style="--am:bx-a-tilt"><span class="ms" aria-hidden="true">headset_mic</span></span><b>Install and training</b><p>Our engineers set it up and train your team, on site or remotely.</p></div>
+      <div class="st" style="--i:3"><span class="n">4</span><span class="c-ic" style="--am:bx-a-pulse"><span class="ms" aria-hidden="true">support_agent</span></span><b>UK support</b><p>Our UK-based team is on hand from the day you go live.</p></div>
+      <div class="st end" style="--i:4"><span class="n"><span class="ms" aria-hidden="true">check</span><i class="pr"></i><i class="pr"></i><i class="pr"></i></span><b>You're on <span class="bx-word">Better.</span></b><p>Your phones, your numbers and your team, all on Better.</p><a class="bx-btn accent" href="#cta">Start with a chat<span class="dot"><svg aria-hidden="true" focusable="false"><use href="#i-go"/></svg></span></a></div>
+    </div></div></div>
+</section>
+
+<section class="c-sec c-setup" id="setup" data-section="setup" data-label="Build your setup">
+  <div class="c-bpin" data-c-build>
+    <div class="c-bin c-wrap">
+      <div class="c-headrow"><h2 class="c-h2 c-split" data-bx-split>What would make your calls <span class="bx-blk">Better?</span></h2><p class="c-dr">Everything Better can set up for you. Keep what you need and we'll come to the call ready to talk about it.</p></div>
+      <div class="bx-build" data-bx-build>
+        <div class="c-rail" aria-hidden="true"><span class="ln"><i></i></span><span class="nd" style="--i:0"><span class="ms">call</span></span><span class="nd" style="--i:1"><span class="ms">wifi</span></span><span class="nd" style="--i:2"><span class="ms">smartphone</span></span><span class="nd" style="--i:3"><span class="ms">mic</span></span><span class="nd" style="--i:4"><span class="ms">hub</span></span><span class="nd" style="--i:5"><span class="ms">music_note</span></span></div>
+        <div class="grid">
+          <div class="bc" data-bx-sw3><span class="ic c-ic" style="--am:bx-a-shake"><span class="ms" aria-hidden="true">call</span></span><b>Phone system</b><span class="st"><small class="a">Add to your setup</small><small class="b">Added</small></span><button type="button" class="bx-switch" role="switch" aria-checked="false" aria-label="Add phone system" data-sw></button></div>
+          <div class="bc" data-bx-sw3><span class="ic c-ic" style="--am:bx-a-blink"><span class="ms" aria-hidden="true">wifi</span></span><b>Business broadband</b><span class="st"><small class="a">Add to your setup</small><small class="b">Added</small></span><button type="button" class="bx-switch" role="switch" aria-checked="false" aria-label="Add business broadband" data-sw></button></div>
+          <div class="bc" data-bx-sw3><span class="ic c-ic" style="--am:bx-a-bob"><span class="ms" aria-hidden="true">smartphone</span></span><b>Mobiles</b><span class="st"><small class="a">Add to your setup</small><small class="b">Added</small></span><button type="button" class="bx-switch" role="switch" aria-checked="false" aria-label="Add mobiles" data-sw></button></div>
+          <div class="bc" data-bx-sw3><span class="ic c-ic" style="--am:bx-a-pulse"><span class="ms" aria-hidden="true">mic</span></span><b>Call recording</b><span class="st"><small class="a">Add to your setup</small><small class="b">Added</small></span><button type="button" class="bx-switch" role="switch" aria-checked="false" aria-label="Add call recording" data-sw></button></div>
+          <div class="bc" data-bx-sw3><span class="ic c-ic" style="--am:bx-a-slide"><span class="ms" aria-hidden="true">hub</span></span><b>CRM integration</b><span class="st"><small class="a">Add to your setup</small><small class="b">Added</small></span><button type="button" class="bx-switch" role="switch" aria-checked="false" aria-label="Add CRM integration" data-sw></button></div>
+          <div class="bc" data-bx-sw3><span class="ic c-ic" style="--am:bx-a-pop"><span class="ms" aria-hidden="true">music_note</span></span><b>On-hold marketing</b><span class="st"><small class="a">Add to your setup</small><small class="b">Added</small></span><button type="button" class="bx-switch" role="switch" aria-checked="false" aria-label="Add on-hold marketing" data-sw></button></div>
+        </div>
+        <div class="bar"><span class="cnt" aria-hidden="true"><b data-cnt>0</b>/6</span><p aria-live="polite" data-sum>Your setup starts here.</p><a class="bx-btn accent" href="#cta">Chat about my setup<span class="dot"><svg aria-hidden="true" focusable="false"><use href="#i-go"/></svg></span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="c-sec c-callsec" id="cta" data-section="cta" data-label="Answer the call">
+  <div class="c-wrap">
+    <div class="c-call" data-c-call>
+      <span class="bx-bgrid" aria-hidden="true"></span>
+      <div class="txt c-drop">
+        <span class="bx-chip dk live"><i></i>Lines open</span>
+        <h2 class="c-split" data-bx-split>Go on, <span class="bx-word">pick up.</span></h2>
+        <p>Better is calling. Answer to pick a time for a quick chat, or decline and call us whenever suits you.</p>
+        <a class="bx-link" href="tel:03301183069">Or call 0330 118 3069 now<span class="ms" aria-hidden="true">arrow_forward</span></a>
+      </div>
+      <div class="vis">
+        <div class="pic cut" aria-hidden="true"><span class="bx-bgrid"></span><img src="../assets/website/ui/ui-cutout.webp" srcset="../assets/website/ui/ui-cutout-m.webp 800w, ../assets/website/ui/ui-cutout.webp 823w" sizes="(max-width:900px) 80vw, 40vw" alt="" width="823" height="813" loading="lazy"></div>
+        <span class="rings" aria-hidden="true"><i></i><i></i><i></i></span>
+        <div class="card" role="group" aria-label="Call from Better">
+          <p class="sr" aria-live="polite" data-call-live></p>
+          <div class="s s-ring">
+            <div class="who"><span class="av"><img src="../assets/logo/better-favicon-white.svg" alt="" width="22" height="19"></span><span><b>Better</b><small>0330 118 3069 · Incoming call</small></span></div>
+            <div class="acts"><button type="button" class="no" data-call="no"><span class="ms" aria-hidden="true">call_end</span>Decline</button><button type="button" class="yes" data-call="yes"><span class="ms" aria-hidden="true">call</span>Answer</button></div>
+          </div>
+          <div class="s s-on" hidden>
+            <div class="who"><span class="av"><img src="../assets/logo/better-favicon-white.svg" alt="" width="22" height="19"></span><span><b>Better</b><small><span class="dotlive" aria-hidden="true"></span>Connected · <span data-call-t>00:00</span></small></span><span class="bx-wave c-wave" aria-hidden="true"></span></div>
+            <p class="bub">Hi, it's the Better team. When's good for a quick chat?</p>
+            <div class="pick" role="radiogroup" aria-label="Day"><button type="button" role="radio" aria-checked="false" data-day="today">Today</button><button type="button" role="radio" aria-checked="false" data-day="tomorrow">Tomorrow</button><button type="button" role="radio" aria-checked="false" data-day="later this week">This week</button></div>
+            <div class="pick" role="radiogroup" aria-label="Time"><button type="button" role="radio" aria-checked="false" data-time="morning">Morning</button><button type="button" role="radio" aria-checked="false" data-time="afternoon">Afternoon</button></div>
+            <button type="button" class="bx-btn accent book" data-call="book" aria-disabled="true">Book my call<span class="dot"><svg aria-hidden="true" focusable="false"><use href="#i-go"/></svg></span></button>
+          </div>
+          <div class="s s-done" hidden>
+            <span class="tick" aria-hidden="true"><span class="ms">check</span></span>
+            <b class="big" data-call-sum>Booked.</b>
+            <small>Leave your details and we'll call you then.</small>
+            <a class="bx-btn accent" href="#cta">Add my details<span class="dot"><svg aria-hidden="true" focusable="false"><use href="#i-go"/></svg></span></a>
+            <button type="button" class="again" data-call="reset">Start again</button>
+          </div>
+          <div class="s s-no" hidden>
+            <b class="big">No problem.</b>
+            <small>Call us back whenever you're ready.</small>
+            <div class="bx-dial c-dial" data-bx-dial data-num="0330 118 3069"><a class="num" href="tel:03301183069" aria-label="Call 0330 118 3069"></a></div>
+            <button type="button" class="again" data-call="reset">Answer after all</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="c-sec c-faq" id="faq" data-section="faq" data-label="Questions">
+  <div class="c-wrap c-faq-in">
+    <div class="c-faq-l">
+      <div class="c-drop"><p class="c-eyebrow">Questions</p><h2 class="c-h2 c-split" data-bx-split>Asked and <span class="bx-blk">answered.</span></h2><p>The things people ask us after the first call. Anything else, just ask.</p></div>
+      <div class="c-ask">
+        <div class="pic" aria-hidden="true"><div class="ph"><img class="phi" src="../assets/website/photos/photo-9-800.webp" srcset="../assets/website/photos/photo-9-480.webp 480w, ../assets/website/photos/photo-9-800.webp 800w, ../assets/website/photos/photo-9-1200.webp 1200w, ../assets/website/photos/photo-9-1600.webp 1600w, ../assets/website/photos/photo-9-2000.webp 2000w, ../assets/website/photos/photo-9.webp 2400w" sizes="(max-width:760px) 99vw, (max-width:1100px) 58vw, 389px" alt="" width="2400" height="1600" loading="lazy" decoding="async"></div></div>
+        <div class="bx-msg" data-bx-msg data-text="Ask us anything. A real person picks up."><span class="sr">Ask us anything. A real person picks up.</span><div class="who" aria-hidden="true"><span class="av"><img src="../assets/logo/better-favicon-white.svg" alt="" width="20" height="17"></span><b>Better</b><small>now</small></div><p class="bub" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="tx"></span></p><small class="st" aria-hidden="true"><span class="ms">done_all</span>Delivered</small></div>
+        <a class="bx-btn light" href="tel:03301183069">Call 0330 118 3069<span class="dot"><span class="ms" aria-hidden="true" style="font-size:20px">call</span></span></a>
+      </div>
+    </div>
+    <div class="bx-faq c-faqs c-drop">
+      <details><summary><span class="n">01</span><span class="q">Can I keep my existing phone numbers?</span><span class="pm" aria-hidden="true"></span></summary><p class="a">Yes. We move your numbers across to Better as part of the switch, so customers keep calling the numbers they already know. We'll talk you through the timings before anything changes.</p></details>
+      <details><summary><span class="n">02</span><span class="q">Do you install the system for us?</span><span class="pm" aria-hidden="true"></span></summary><p class="a">Yes. Our own engineers install your phones and set everything up, on site or remotely, then show your team how it all works.</p></details>
+      <details><summary><span class="n">03</span><span class="q">Is training included?</span><span class="pm" aria-hidden="true"></span></summary><p class="a">Yes. Training is part of every install. Our UK-based team trains your people on site or remotely, and they're on hand afterwards if anyone needs a refresher.</p></details>
+      <details><summary><span class="n">04</span><span class="q">What happens if there's a service outage?</span><span class="pm" aria-hidden="true"></span></summary><p class="a">Call our support team in Bournemouth and they'll get straight on it. Because your system runs in the cloud, your team can keep taking calls on the mobile and desktop apps in the meantime.</p></details>
+      <details><summary><span class="n">05</span><span class="q">How long is the contract, and how does equipment finance work?</span><span class="pm" aria-hidden="true"></span></summary><p class="a">Your specialist talks you through the contract length, what's included and how any equipment finance works before you sign, and it's all set out in writing for you to read first.</p></details>
+      <details><summary><span class="n">06</span><span class="q">How secure is the system, and is it PCI compliant?</span><span class="pm" aria-hidden="true"></span></summary><p class="a">Calls and recordings are stored securely in the cloud, and call recording supports PCI compliance for taking card payments by phone. Anti-fraud protection covers you for up to £10,000 a month of fraudulent calls.</p></details>
+      <details><summary><span class="n">07</span><span class="q">What does it cost?</span><span class="pm" aria-hidden="true"></span></summary><p class="a">It depends on the size of your team and what you need, so we quote for your business after a short chat. Build your setup above and we'll come ready to talk numbers.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="c-sec c-pre" data-section="closing" data-label="Closing panel">
+  <div class="c-wrap">
+    <div class="bx-yel c-yel" data-bx-yel data-c-yel>
+      <span class="bx-bgrid" aria-hidden="true"></span><span class="bx-bgrid lit" aria-hidden="true"></span>
+      <div class="c-drop"><h2 class="c-split" data-bx-split>Better service is <span class="bx-word">one switch away.</span></h2><p>Phones, broadband and mobiles from a team that installs them, trains you and picks up when you call.</p></div>
+      <div class="mag"><a class="bx-btn c-bigbtn" href="#cta">Let's chat<span class="dot"><svg aria-hidden="true" focusable="false"><use href="#i-go"/></svg></span></a><a class="bx-link" href="tel:03301183069">0330 118 3069<span class="ms" aria-hidden="true">arrow_forward</span></a></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="c-sec c-foot" data-section="footer" data-label="Footer" data-cr-shared>
+  <div class="c-wrap">
+    <div class="bx-ft c-ft" data-c-ft>
+      <span class="bx-bgrid" aria-hidden="true"></span>
+      <div class="top"><p class="h c-split" data-bx-split>Let's make your calls <span class="c-ul">Better.</span></p><a class="bx-btn" href="#cta">Let's chat<span class="dot"><svg aria-hidden="true" focusable="false"><use href="#i-go"/></svg></span></a></div>
+      <div class="cols c-drop">
+        <div><p class="h5">Features</p><ul><li><a href="#products">Phone systems</a></li><li><a href="#products">Business broadband</a></li><li><a href="#products">Mobiles</a></li><li><a href="#extras">Anti-fraud</a></li></ul></div>
+        <div><p class="h5">Company</p><ul><li><a href="#why">Why Better</a></li><li><a href="#team">About</a></li><li><a href="#life">Careers</a></li><li><a href="#cta">Contact</a></li></ul></div>
+        <div><p class="h5">Legal</p><ul><li><a href="#top">Terms</a></li><li><a href="#top">Privacy</a></li><li><a href="#top">Complaints</a></li><li><a href="#top">Ofcom general conditions</a></li></ul></div>
+        <div><p class="h5">Talk to us</p><ul><li><a href="tel:03301183069">0330 118 3069</a></li><li><a href="mailto:hello@better.co">hello@better.co</a></li><li>80 Holdenhurst Road<br>Bournemouth BH8 8AQ</li></ul></div>
+      </div>
+      <div class="mark" data-bx-wght2 role="img" aria-label="Better">Better.</div>
+      <div class="legal"><span>© 2026 Better Comms (VOIP) Ltd. Registered in England and Wales, no. 14605186. VAT no. GB 434 2320 34.</span><a href="#top">Back to top<span class="ms" aria-hidden="true">north_east</span></a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="home.js" defer></script>
+<script src="notes.js" defer></script>
+<script src="thinking.js" defer></script>
+<script src="review.js" defer></script>
+</body>
+</html>
